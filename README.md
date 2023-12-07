@@ -1,4 +1,4 @@
-# How to create a C# console application, with .NET 8, to send messages to your Azure EventHub
+# How to create a C# console application, with .NET 8, to send/read messages to/from your Azure EventHub
 
 # 1. Create an Azure Event Hub
 
