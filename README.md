@@ -1,5 +1,7 @@
 # Azure EventHub
 
+# 1. Create an Azure Event Hub
+
 We input the data for creating a new **Azure EventHub**:
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/73e5e771-b63d-4cea-abe9-786cc46c331f)
@@ -30,6 +32,55 @@ Now we create an Event Hub
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/9a885d2c-2bbf-469f-8b4c-fe60ce5e42d8)
 
+# 2. Input the application source code for sending the messages to the Azure Event Hub
 
+
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using Azure.Messaging.EventHubs;
+using Azure.Messaging.EventHubs.Producer;
+
+string EventHubConnectionString = "Endpoint=sb://resourcegroupnamespace1.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ojE7f1xAMJ2gpwK1zmsdwkQ4YdC65bhQR+AEhJX8PDM=";
+string EventHubName = "myeventhub";
+
+await SendEventsAsync(5); // Specify the number of events you want to send
+
+async Task SendEventsAsync(int numberOfEvents)
+{
+    await using (var producerClient = new EventHubProducerClient(EventHubConnectionString, EventHubName))
+    {
+        List<EventData> eventBatch = new List<EventData>();
+
+        for (int i = 0; i < numberOfEvents; i++)
+        {
+            try
+            {
+                string messageBody = $"Message {i}";
+                var eventData = new EventData(Encoding.UTF8.GetBytes(messageBody));
+                eventBatch.Add(eventData);
+                Console.WriteLine($"Event added to batch: {messageBody}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error creating event: {ex.Message}");
+            }
+        }
+
+        try
+        {
+            await producerClient.SendAsync(eventBatch);
+            Console.WriteLine($"Batch of events sent successfully");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending batch of events: {ex.Message}");
+        }
+    }
+}
+```
 
 
