@@ -113,7 +113,17 @@ This is the ouput we get after running the application:
 
 # 6. Check in Azure portal we received the messages in the EventHub
 
-Open Azure portal and navigate to the Monitor service. 
+Open Azure portal and navigate to the **Monitor** service. 
 
-Then select Metrics and the EventHub we would like to monitor
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/c2912ec6-503c-4f48-8dc2-4d5f222d8cf9)
+
+Then select **Metrics** and the EventHub we would like to monitor
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/8abba4d7-f50e-462c-81a5-1a21d0854856)
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/fcb93c52-bd38-42cd-9902-d39e6066789b)
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/7d094d23-d112-4c57-9638-2eae097d69d0)
+
+
 
