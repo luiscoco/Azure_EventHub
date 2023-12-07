@@ -42,6 +42,9 @@ Now we create an Event Hub
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/be31e079-d8ac-47eb-8238-7bb2107a2485)
 
+Load the Azure EventHub library with Nuget:
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/355c3988-776e-44eb-a0e2-a691327b4971)
 
 # 3. Input the application source code for sending the messages to the Azure Event Hub
 
