@@ -18,3 +18,9 @@ Then we press the "**Create**" button:
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/c51483d9-1a4e-4874-b7f9-122e067db790)
 
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/8aa1372f-47e4-4a71-ae9a-a5b86dd665e3)
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/beda6c87-08bd-4278-8be6-16beadc0359e)
+
+
+
