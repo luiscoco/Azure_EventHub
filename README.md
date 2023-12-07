@@ -152,5 +152,6 @@ Then select **Metrics** and the EventHub we would like to monitor
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/7d094d23-d112-4c57-9638-2eae097d69d0)
 
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/fbfdbac8-f35f-470f-a4b1-a38c32c243ee)
 
 
