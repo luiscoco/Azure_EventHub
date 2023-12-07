@@ -32,9 +32,18 @@ Now we create an Event Hub
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/9a885d2c-2bbf-469f-8b4c-fe60ce5e42d8)
 
-# 2. Input the application source code for sending the messages to the Azure Event Hub
+# 2. Create a C# console application (with .NET 8) in Visual Studio
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/dc12bdb8-c1b3-4f1d-8df2-42fa798fa3cd)
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/2348157a-e2f6-44c7-9de6-64304813a852)
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/05daad0a-8dec-4119-8f90-8c0cd6cab158)
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/be31e079-d8ac-47eb-8238-7bb2107a2485)
 
 
+# 3. Input the application source code for sending the messages to the Azure Event Hub
 
 ```csharp
 using System;
