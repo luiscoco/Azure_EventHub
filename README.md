@@ -22,5 +22,14 @@ Then we press the "**Create**" button:
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/beda6c87-08bd-4278-8be6-16beadc0359e)
 
+Now we create an Event Hub
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/a6af56eb-476d-4403-b88f-b7472a9af8ac)
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/4a4a14bf-67e2-4b45-9378-39ca3d8c6a4b)
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/9a885d2c-2bbf-469f-8b4c-fe60ce5e42d8)
+
+
 
 
