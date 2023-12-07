@@ -56,7 +56,7 @@ Then we copy the EventHub name:
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/03e2cd33-46e4-4e3c-8a50-05728624ac86)
 
-# 4. Input the application source code for sending the messages to the Azure Event Hub
+# 4. Input the application source code for "Sending" and "Receiving" messages to/from the Azure Event Hub
 
 ```csharp
 using System;
@@ -64,12 +64,16 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Azure.Messaging.EventHubs;
+using Azure.Messaging.EventHubs.Consumer;
 using Azure.Messaging.EventHubs.Producer;
 
 string EventHubConnectionString = "Endpoint=sb://resourcegroupnamespace1.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ojE7f1xAMJ2gpwK1zmsdwkQ4YdC65bhQR+AEhJX8PDM=";
 string EventHubName = "myeventhub";
 
+string ConsumerGroup = "$Default";
+
 await SendEventsAsync(5); // Specify the number of events you want to send
+await ReceiveEventsAsync();
 
 async Task SendEventsAsync(int numberOfEvents)
 {
@@ -103,13 +107,36 @@ async Task SendEventsAsync(int numberOfEvents)
         }
     }
 }
+
+async Task ReceiveEventsAsync()
+{
+    await using (var consumerClient = new EventHubConsumerClient(ConsumerGroup, EventHubConnectionString, EventHubName))
+    {
+        Console.WriteLine("Listening for events...");
+
+        try
+        {
+            await foreach (PartitionEvent partitionEvent in consumerClient.ReadEventsAsync())
+            {
+                string messageBody = Encoding.UTF8.GetString(partitionEvent.Data.Body.ToArray());
+                Console.WriteLine($"Received event: {messageBody}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error reading events: {ex.Message}");
+        }
+    }
+}
 ```
+
 
 # 5. Build and run the application in Visual Studio 2022 Community Edition
 
 This is the ouput we get after running the application:
 
-![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/b7f44bd2-7ad9-45eb-9f97-6d00a64d666a)
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/e1f3f4d5-1ddc-42d3-8065-cea0fe1c86b4)
+
 
 # 6. Check in Azure portal we received the messages in the EventHub
 
