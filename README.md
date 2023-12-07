@@ -32,7 +32,7 @@ Now we create an Event Hub
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/9a885d2c-2bbf-469f-8b4c-fe60ce5e42d8)
 
-# 2. Create a C# console application (with .NET 8) in Visual Studio
+# 2. Create a C# console application (with .NET 8) in Visual Studio 2022 Community Edition
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/dc12bdb8-c1b3-4f1d-8df2-42fa798fa3cd)
 
@@ -46,7 +46,17 @@ Load the Azure EventHub library with Nuget:
 
 ![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/355c3988-776e-44eb-a0e2-a691327b4971)
 
-# 3. Input the application source code for sending the messages to the Azure Event Hub
+# 3. Copy the EventHub Connection String and EventHub Name from Azure Portal
+
+We first copy the EventHub connection string:
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/9fb020a7-238f-4808-8dbd-865768245aaf)
+
+Then we copy the EventHub name:
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/03e2cd33-46e4-4e3c-8a50-05728624ac86)
+
+# 4. Input the application source code for sending the messages to the Azure Event Hub
 
 ```csharp
 using System;
@@ -95,4 +105,15 @@ async Task SendEventsAsync(int numberOfEvents)
 }
 ```
 
+# 5. Build and run the application in Visual Studio 2022 Community Edition
+
+This is the ouput we get after running the application:
+
+![image](https://github.com/luiscoco/Azure_EventHub/assets/32194879/b7f44bd2-7ad9-45eb-9f97-6d00a64d666a)
+
+# 6. Check in Azure portal we received the messages in the EventHub
+
+Open Azure portal and navigate to the Monitor service. 
+
+Then select Metrics and the EventHub we would like to monitor
 
